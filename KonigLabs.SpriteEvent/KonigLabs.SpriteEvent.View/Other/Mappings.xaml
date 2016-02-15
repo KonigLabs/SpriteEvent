@@ -1,0 +1,12 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:KonigLabs.SpriteEvent.View.Other"
+                    xmlns:vm="clr-namespace:KonigLabs.SpriteEvent.ViewModel.ViewModels;assembly=KonigLabs.SpriteEvent.ViewModel"
+                    xmlns:controls="clr-namespace:KonigLabs.SpriteEvent.View.Controls">
+    <DataTemplate DataType="{x:Type vm:TakePhotoViewModel}">
+        <controls:TakePhotoCtl/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:WelcomViewModel}">
+        <controls:WelcomCtl/>
+    </DataTemplate>
+</ResourceDictionary>
