@@ -57,27 +57,36 @@ namespace KonigLabs.SpriteEvent.ViewModel.ViewModels
         {
             get
             {
-                return _photoResult;
+                using (var ms = new MemoryStream(_photoResult))
+                {
+                    return GetCartoonBwPhoto(new Bitmap(ms)).ToBytes();
+                }
+                    
             }
         }
         byte[] _photoResult;
 
 
-
         public static Bitmap GetCartoonBwPhoto(Bitmap source)
         {
             var result = source.CartoonFilter(3, 25, 15);
-            return Bitmap(MakeBlackWhite(result));
+            using (var stream = new MemoryStream())
+            {
+                result.Save(stream, System.Drawing.Imaging.ImageFormat.Png);
+                result = new Bitmap(MakeBlackWhite(stream));
+            }
+            return result;
         }
 
-        private static MemoryStream MakeBlackWhite(Bitmap img)
+        private static MemoryStream MakeBlackWhite(MemoryStream inStream)
         {
             var outStream = new MemoryStream();
             // Initialize the ImageFactory using the overload to preserve EXIF metadata.
             using (var imageFactory = new ImageFactory(preserveExifData: true))
             {
                 // Load, resize, set the format and quality and save an image.
-                ((Image)img).Filter(MatrixFilters.BlackWhite)
+                imageFactory.Load(inStream.ToArray())
+                    .Filter(MatrixFilters.BlackWhite)
                     .Save(outStream);
             }
             return outStream;

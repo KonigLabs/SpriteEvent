@@ -21,20 +21,6 @@
             <TextBlock VerticalAlignment="Center">на Старт</TextBlock>
         </StackPanel>
         <Image Source="{Binding LiveViewImageStream, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource ByteArrayToImageSourceConverter}}" Width="768" Height="512"  Grid.Row="1"/>
-        <!--<Rectangle Width="768" Height="512" Grid.Row="1">
-            <Rectangle.Fill>
-                <ImageBrush Stretch="Fill">
-                    <ImageBrush.ImageSource>
-                        <MultiBinding Converter="{StaticResource LiveViewImageConverter}">
-                            <Binding Path="LiveViewImageStream" UpdateSourceTrigger="PropertyChanged" />
-                            <Binding RelativeSource="{RelativeSource Mode=Self}" Path="ImageSource"/>
-                            <Binding Path="Width" />
-                            <Binding Path="Height" />
-                        </MultiBinding>
-                    </ImageBrush.ImageSource>
-                </ImageBrush>
-            </Rectangle.Fill>
-        </Rectangle>-->
-        <Button FontSize="50" Width="350" Height="150" Grid.Row="2" Command="{Binding TakePictureCommand}">Take photo</Button>
+        <Button Grid.Row="2" Command="{Binding TakePictureCommand}">Take photo</Button>
     </Grid>
 </UserControl>

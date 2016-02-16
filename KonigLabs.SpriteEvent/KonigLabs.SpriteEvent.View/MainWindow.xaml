@@ -6,5 +6,5 @@
         xmlns:local="clr-namespace:KonigLabs.SpriteEvent.View"
         mc:Ignorable="d"
         Content="{Binding Path=CurrentContent}"
-        Title="MainWindow" Height="1920" Width="1080">
+        Title="MainWindow" WindowState="Maximized">
 </Window>

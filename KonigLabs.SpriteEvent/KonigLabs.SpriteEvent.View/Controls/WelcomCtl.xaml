@@ -13,6 +13,6 @@
         </Grid.RowDefinitions>
         <Image Source="pack://Application:,,,/Resources/logo.png"/>
         <Label HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1">CALL-TO-ACTION</Label>
-        <Button Width="350" Height="150" FontSize="50" Grid.Row="2" Command="{Binding StartCommand}">Старт</Button>
+        <Button Grid.Row="2" Command="{Binding StartCommand}">Старт</Button>
     </Grid>
 </UserControl>
