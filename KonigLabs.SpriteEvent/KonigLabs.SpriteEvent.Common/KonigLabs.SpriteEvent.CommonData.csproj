@@ -46,6 +46,7 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\BitmapExtensions.cs" />
@@ -53,6 +54,7 @@
     <Compile Include="Extensions\DictionaryExtensions.cs" />
     <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Extensions\EnumExtensions.cs" />
+    <Compile Include="Extensions\ImageExtensions.cs" />
     <Compile Include="Extensions\LinkedListExtensions.cs" />
     <Compile Include="Extensions\MathExtensions.cs" />
     <Compile Include="Extensions\SerializingExtensions.cs" />

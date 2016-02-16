@@ -1,8 +1,8 @@
-﻿using GalaSoft.MvvmLight.Command;
-using KonigLabs.SpriteEvent.CommonViewModel.Messenger;
-using KonigLabs.SpriteEvent.CommonViewModel.Messenger.Messages;
-using KonigLabs.SpriteEvent.CommonViewModel.Navigator;
-using KonigLabs.SpriteEvent.CommonViewModel.ViewModels;
+﻿
+using KonigLabs.SpriteEvent.CommonViewModels.Behaviors;
+using KonigLabs.SpriteEvent.CommonViewModels.Messenger;
+using KonigLabs.SpriteEvent.CommonViewModels.ViewModels;
+using KonigLabs.SpriteEvent.CommonViewModels.ViewModels.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace KonigLabs.SpriteEvent.ViewModel.ViewModels
 {
-    public class MainViewModel : BaseViewModel
+    public class MainViewModel : BaseViewModel, IWindowContainer
     {
         private IViewModelNavigator _navigator;
         private IMessenger _messenger;
@@ -23,6 +23,9 @@ namespace KonigLabs.SpriteEvent.ViewModel.ViewModels
             _navigator.NavigateForward<WelcomViewModel>(null);
         }
         private BaseViewModel _currentContent;
+
+        public event EventHandler<ShowWindowEventArgs> ShowWindow;
+
         public BaseViewModel CurrentContent
         {
             get { return _currentContent; }

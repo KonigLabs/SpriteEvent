@@ -9,11 +9,12 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>KonigLabs.SpriteEvent.ViewModel</RootNamespace>
     <AssemblyName>KonigLabs.SpriteEvent.ViewModel</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -91,8 +92,12 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Factories\TakePhotoResultViewModelFactory.cs" />
     <Compile Include="Factories\TakePhotoViewModelFactory.cs" />
     <Compile Include="Factories\WelcomViewModelFactory.cs" />
+    <Compile Include="Providers\SettingsProvider.cs" />
+    <Compile Include="Settings\CameraSettingsDto.cs" />
+    <Compile Include="ViewModels\TakePhotoResultViewModel.cs" />
     <Compile Include="ViewModels\WelcomViewModel.cs" />
     <Compile Include="Ninject\NinjectMainModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -125,13 +130,25 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\KonigLabs.SpriteEvent.CommonViewModel\KonigLabs.SpriteEvent.CommonViewModel.csproj">
-      <Project>{806f65e0-8649-4e30-9e32-013dc22237ca}</Project>
-      <Name>KonigLabs.SpriteEvent.CommonViewModel</Name>
+    <ProjectReference Include="..\KonigLabs.SpriteEvent.CommonViewModels\KonigLabs.SpriteEvent.CommonViewModels.csproj">
+      <Project>{f4109e8e-572c-40af-a52b-fb4aaf611c10}</Project>
+      <Name>KonigLabs.SpriteEvent.CommonViewModels</Name>
     </ProjectReference>
     <ProjectReference Include="..\KonigLabs.SpriteEvent.Common\KonigLabs.SpriteEvent.CommonData.csproj">
       <Project>{a464c7a6-84f3-4a44-8133-13eafefd8e24}</Project>
       <Name>KonigLabs.SpriteEvent.CommonData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KonigLabs.SpriteEvent.Entities\KonigLabs.SpriteEvent.Entities.csproj">
+      <Project>{c4c143fd-d585-436b-9f3a-30bb04880d75}</Project>
+      <Name>KonigLabs.SpriteEvent.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KonigLabs.SpriteEvent.PatternProcessing\KonigLabs.SpriteEvent.ImageProcessing.csproj">
+      <Project>{d97626b4-643e-4b4e-ab84-e626c45d38cd}</Project>
+      <Name>KonigLabs.SpriteEvent.ImageProcessing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KonigLabs.SpriteEvent.SDKData\KonigLabs.SpriteEvent.SDKData.csproj">
+      <Project>{1679c88b-2e63-41c0-8672-f1ba1ead5378}</Project>
+      <Name>KonigLabs.SpriteEvent.SDKData</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

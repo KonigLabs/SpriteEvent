@@ -1,11 +1,7 @@
 ﻿using GalaSoft.MvvmLight.Command;
-using KonigLabs.SpriteEvent.CommonViewModel.Navigator;
-using KonigLabs.SpriteEvent.CommonViewModel.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using KonigLabs.SpriteEvent.CommonViewModels.ViewModels;
+using KonigLabs.SpriteEvent.CommonViewModels.ViewModels.Navigation;
+
 
 namespace KonigLabs.SpriteEvent.ViewModel.ViewModels
 {

@@ -62,10 +62,12 @@
     <None Include="Resources\EDSDK_API.pdf" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="OldSdk\EDSDK.dll" />
-    <Content Include="OldSdk\EdsImage.dll" />
-    <Content Include="Resources\EDSDK.dll" />
-    <Content Include="Resources\EdsImage.dll" />
+    <Content Include="Resources\EDSDK.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\EdsImage.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Readme.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -76,7 +78,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>xcopy "$(SolutionDir).\EDSDKLib\Resources\*.dll" "$(SolutionDir)ImageMaker.View\bin\Debug\" /Y /I</PreBuildEvent>
+    <PreBuildEvent>xcopy "$(SolutionDir).\EDSDKLib\Resources\*.dll" "$(SolutionDir)KonigLabs.SpriteEvent.View\bin\Debug\" /Y /I</PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
