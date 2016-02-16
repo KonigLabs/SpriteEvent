@@ -4,8 +4,15 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:KonigLabs.SpriteEvent.View.Controls"
-             mc:Ignorable="d" >
+             mc:Ignorable="d" Width="1080" Height="900">
     <Grid>
-        <Button Width="350" Height="150" FontSize="50" Command="{Binding StartCommand}">Старт</Button>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Image Source="pack://Application:,,,/Resources/logo.png"/>
+        <Label HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1">CALL-TO-ACTION</Label>
+        <Button Width="350" Height="150" FontSize="50" Grid.Row="2" Command="{Binding StartCommand}">Старт</Button>
     </Grid>
 </UserControl>

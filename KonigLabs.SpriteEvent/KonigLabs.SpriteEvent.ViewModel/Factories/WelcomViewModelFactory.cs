@@ -1,5 +1,5 @@
-﻿using KonigLabs.SpriteEvent.CommonViewModel.Factories;
-using KonigLabs.SpriteEvent.CommonViewModel.Navigator;
+﻿using KonigLabs.SpriteEvent.CommonViewModels.ViewModels.Factories;
+using KonigLabs.SpriteEvent.CommonViewModels.ViewModels.Navigation;
 using KonigLabs.SpriteEvent.ViewModel.ViewModels;
 using System;
 using System.Collections.Generic;

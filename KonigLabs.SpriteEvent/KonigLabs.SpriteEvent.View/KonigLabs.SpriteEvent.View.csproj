@@ -9,11 +9,12 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>KonigLabs.SpriteEvent.View</RootNamespace>
     <AssemblyName>KonigLabs.SpriteEvent.View</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -57,6 +58,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\MvvmLightLibs.5.2.0.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
       <Private>True</Private>
@@ -83,6 +85,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\TakePhotoResultCtl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\WelcomCtl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -98,9 +104,14 @@
     <Compile Include="Controls\TakePhotoCtl.xaml.cs">
       <DependentUpon>TakePhotoCtl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\TakePhotoResultCtl.xaml.cs">
+      <DependentUpon>TakePhotoResultCtl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\WelcomCtl.xaml.cs">
       <DependentUpon>WelcomCtl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Convertrs\ByteArrayToImageSourceConverter.cs" />
+    <Compile Include="Convertrs\LiveViewImageConverter.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -139,14 +150,21 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\KonigLabs.SpriteEvent.CommonViewModel\KonigLabs.SpriteEvent.CommonViewModel.csproj">
-      <Project>{806f65e0-8649-4e30-9e32-013dc22237ca}</Project>
-      <Name>KonigLabs.SpriteEvent.CommonViewModel</Name>
+    <ProjectReference Include="..\KonigLabs.SpriteEvent.CommonViewModels\KonigLabs.SpriteEvent.CommonViewModels.csproj">
+      <Project>{f4109e8e-572c-40af-a52b-fb4aaf611c10}</Project>
+      <Name>KonigLabs.SpriteEvent.CommonViewModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KonigLabs.SpriteEvent.Themes\KonigLabs.SpriteEvent.Themes.csproj">
+      <Project>{47d265d5-da09-4460-aecc-06933c109310}</Project>
+      <Name>KonigLabs.SpriteEvent.Themes</Name>
     </ProjectReference>
     <ProjectReference Include="..\KonigLabs.SpriteEvent.ViewModel\KonigLabs.SpriteEvent.ViewModel.csproj">
       <Project>{2368b7d8-a8a1-493a-b24c-b81c5a33383b}</Project>
       <Name>KonigLabs.SpriteEvent.ViewModel</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

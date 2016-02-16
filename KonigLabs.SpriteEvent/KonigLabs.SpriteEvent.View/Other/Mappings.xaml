@@ -9,4 +9,7 @@
     <DataTemplate DataType="{x:Type vm:WelcomViewModel}">
         <controls:WelcomCtl/>
     </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:TakePhotoResultViewModel}">
+        <controls:TakePhotoResultCtl/>
+    </DataTemplate>
 </ResourceDictionary>

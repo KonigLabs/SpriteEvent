@@ -7,6 +7,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Other/Mappings.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/KonigLabs.SpriteEvent.Themes;component/Styles/CustomButton.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

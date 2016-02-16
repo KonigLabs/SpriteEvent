@@ -1,11 +1,7 @@
-﻿using KonigLabs.SpriteEvent.ViewModel.ViewModels;
+﻿using KonigLabs.SpriteEvent.CommonViewModels.Ninject;
+using KonigLabs.SpriteEvent.ViewModel.Ninject;
+using KonigLabs.SpriteEvent.ViewModel.ViewModels;
 using Ninject;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace KonigLabs.SpriteEvent.View
@@ -26,7 +22,7 @@ namespace KonigLabs.SpriteEvent.View
         public void InitApp()
         {
             //инициализация Ninject
-            var kernel = new Ninject.StandardKernel(new ViewModel.Ninject.NinjectMainModule());
+            var kernel = NinjectBootstrapper.GetKernel(new CommonViewModels.Ninject.NinjectBaseModule(),new NinjectMainModule());
             _mainViewModel = kernel.Get<MainViewModel>();
             MainWindow = new MainWindow() { DataContext = _mainViewModel };
             MainWindow.Closed += (s, e) =>

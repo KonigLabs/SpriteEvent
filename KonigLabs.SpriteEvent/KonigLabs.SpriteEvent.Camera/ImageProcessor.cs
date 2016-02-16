@@ -5,7 +5,6 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using EDSDKLib;
-using KonigLabs.SpriteEvent.SDKData.Enums;
 using KonigLabs.SpriteEvent.SDKData.Events;
 
 namespace KonigLabs.SpriteEvent.Camera
