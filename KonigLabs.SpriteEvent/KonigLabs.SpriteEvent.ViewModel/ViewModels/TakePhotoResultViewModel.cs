@@ -1,15 +1,11 @@
 ﻿using GalaSoft.MvvmLight.Command;
 using KonigLabs.SpriteEvent.CommonViewModels.ViewModels;
 using KonigLabs.SpriteEvent.CommonViewModels.ViewModels.Navigation;
-using KonigLabs.SpriteEvent.PatternProcessing;
-using System;
-using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
+using ImageProcessor;
+using ImageProcessor.Imaging.Filters.Photo;
+using KonigLabs.SpriteEvent.Common.Extensions;
 
 namespace KonigLabs.SpriteEvent.ViewModel.ViewModels
 {
@@ -66,5 +62,31 @@ namespace KonigLabs.SpriteEvent.ViewModel.ViewModels
         }
         byte[] _photoResult;
 
+
+
+        public static Bitmap GetCartoonBwPhoto(Bitmap source)
+        {
+            var result = source.CartoonFilter(3, 25, 15);
+            using (var stream = new MemoryStream())
+            {
+                result.Save(stream, System.Drawing.Imaging.ImageFormat.Png);
+                result = new Bitmap(MakeBlackWhite(stream));
+            }
+            return result;
+        }
+
+        private static MemoryStream MakeBlackWhite(Stream inStream)
+        {
+            var outStream = new MemoryStream();
+            // Initialize the ImageFactory using the overload to preserve EXIF metadata.
+            using (var imageFactory = new ImageFactory(preserveExifData: true))
+            {
+                // Load, resize, set the format and quality and save an image.
+                imageFactory.Load(inStream)
+                    .Filter(MatrixFilters.BlackWhite)
+                    .Save(outStream);
+            }
+            return outStream;
+        }
     }
 }
