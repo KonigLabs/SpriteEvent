@@ -62,6 +62,8 @@
     <None Include="Resources\EDSDK_API.pdf" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="OldSdk\EDSDK.dll" />
+    <Content Include="OldSdk\EdsImage.dll" />
     <Content Include="Resources\EDSDK.dll" />
     <Content Include="Resources\EdsImage.dll" />
     <Content Include="Resources\Readme.txt" />
